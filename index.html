@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>地理総合まとめ｜ヨーロッパ・ロシア・南アジア</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F7FA; --sheet:#FFFFFF; --ink:#1F2A44; --sub:#56627A; --rule:#D6DCE6;
+  --marker:#FFE45C; --pink:#FFB3CF; --red:#D2283C; --redsheet:#E0404F; --navy:#2B3F7A;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#131825; --sheet:#1B2232; --ink:#E7EBF3; --sub:#A3ADC2; --rule:#323C52;
+    --marker:#6B5A12; --pink:#6B2A44; --red:#FF6B7A; --redsheet:#B8303E; --navy:#9DB2F0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131825; --sheet:#1B2232; --ink:#E7EBF3; --sub:#A3ADC2; --rule:#323C52;
+  --marker:#6B5A12; --pink:#6B2A44; --red:#FF6B7A; --redsheet:#B8303E; --navy:#9DB2F0;
+  color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  font-size:16px;line-height:1.85;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho",serif;line-height:1.35;margin:0}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:4px}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--sheet);border-bottom:1px solid var(--rule)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--sheet)}
+.bar{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:8px 16px}
+.brand{font-family:"Zen Old Mincho",serif;font-weight:900;font-size:1.05rem;margin-right:auto;white-space:nowrap}
+nav.tabs{max-width:880px;margin:0 auto;display:flex;gap:4px;padding:0 12px;overflow-x:auto}
+nav.tabs a{flex:1 0 auto;text-align:center;padding:10px 14px;text-decoration:none;color:var(--sub);font-weight:700;border-bottom:3px solid transparent}
+nav.tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--red)}
+.iconbtn{border:1px solid var(--rule);background:transparent;border-radius:999px;padding:4px 12px;font-size:.85rem;cursor:pointer}
+
+main{max-width:880px;margin:0 auto;padding:24px 16px 80px}
+.view{display:none}.view.on{display:block}
+
+/* hero */
+.hero{padding:12px 0 24px}
+.hero h1{font-size:clamp(1.9rem,6vw,2.8rem);font-weight:900;letter-spacing:.02em}
+.hero h1 .yr{display:block;font-size:.5em;color:var(--sub);font-weight:700;letter-spacing:.1em}
+.hero p{color:var(--sub);max-width:36em;margin:.8em 0 0}
+
+/* red sheet */
+mark{background:linear-gradient(transparent 45%,var(--marker) 45%);color:inherit;padding:0 .1em;border-radius:2px}
+mark.p{background:linear-gradient(transparent 45%,var(--pink) 45%)}
+body.sheet mark{background:var(--redsheet);color:transparent;cursor:pointer;user-select:none}
+body.sheet mark.open{background:linear-gradient(transparent 45%,var(--marker) 45%);color:var(--red);font-weight:700}
+.sheetbtn[aria-pressed="true"]{background:var(--redsheet);color:#fff;border-color:var(--redsheet)}
+
+/* chapters */
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0;list-style:none}
+.toc a{display:block;padding:6px 12px;border:1px solid var(--rule);border-radius:6px;text-decoration:none;color:var(--ink);font-size:.9rem;background:var(--sheet)}
+section.ch{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:24px 20px;margin-bottom:28px}
+section.ch > h2{font-size:1.5rem;font-weight:900}
+.pg{color:var(--sub);font-size:.85rem;margin:.2em 0 1em}
+.q{border-left:4px solid var(--red);padding:2px 0 2px 12px;margin:0 0 1.2em;font-weight:700}
+section.ch h3{font-size:1.1rem;margin:1.6em 0 .5em;padding-bottom:4px;border-bottom:1px dashed var(--rule)}
+section.ch ul{padding-left:1.2em;margin:.4em 0}
+section.ch li{margin:.25em 0}
+.box{border:1px solid var(--rule);border-radius:8px;padding:12px 14px;margin:1em 0;background:var(--paper)}
+.box b{color:var(--navy)}
+.sum{border:2px solid var(--ink);border-radius:8px;padding:14px 16px;margin-top:1.4em}
+.sum strong{font-family:"Zen Old Mincho",serif}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+.tw{overflow-x:auto}
+td,th{border:1px solid var(--rule);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--paper);white-space:nowrap}
+
+/* timeline */
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px}
+.chip{border:1px solid var(--rule);background:var(--sheet);border-radius:999px;padding:4px 12px;font-size:.88rem;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+ol.tl{list-style:none;margin:0;padding:0;position:relative}
+ol.tl::before{content:"";position:absolute;left:62px;top:6px;bottom:6px;width:2px;background:var(--rule)}
+.tl li{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:8px 0;position:relative}
+.tl .y{font-family:"Zen Old Mincho",serif;font-weight:900;font-size:1.1rem;text-align:right}
+.tl li::after{content:"";position:absolute;left:57px;top:17px;width:12px;height:12px;border-radius:50%;background:var(--sheet);border:3px solid var(--c,var(--ink))}
+.tl .ev{background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:8px 12px}
+.tl .tag{display:inline-block;font-size:.75rem;padding:0 8px;border-radius:999px;color:#fff;background:var(--c);margin-right:6px;vertical-align:2px}
+.tl .ev small{display:block;color:var(--sub);font-size:.85rem;line-height:1.6;margin-top:2px}
+.tl li.big .ev{border:2px solid var(--red)}
+
+/* cloze */
+.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:16px}
+select{font:inherit;color:var(--ink);background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:6px 8px}
+.btn{border:1px solid var(--ink);background:var(--sheet);border-radius:6px;padding:6px 14px;cursor:pointer;font-weight:700}
+.btn.main{background:var(--ink);color:var(--paper)}
+ol.cloze{padding-left:1.6em;margin:0}
+ol.cloze li{background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:10px 14px;margin:0 0 10px}
+.blank{display:inline-block;min-width:5em;border:none;border-bottom:2px solid var(--red);background:transparent;color:transparent;cursor:pointer;padding:0 .3em;margin:0 .15em;line-height:1.4;text-align:center}
+.blank.open{color:var(--red);font-weight:700}
+.chlabel{display:block;font-size:.78rem;color:var(--sub)}
+
+/* qa */
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:24px 20px;min-height:220px;display:flex;flex-direction:column}
+.card .meta{display:flex;justify-content:space-between;color:var(--sub);font-size:.85rem}
+.card .qq{font-size:1.2rem;font-weight:700;margin:18px 0;flex:1}
+.card .ans{font-family:"Zen Old Mincho",serif;font-size:1.5rem;font-weight:900;color:var(--red);min-height:1.6em;margin-bottom:16px}
+.card .ans small{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-size:.9rem;font-weight:400;color:var(--sub)}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row .btn{flex:1;min-height:44px}
+.progress{height:6px;background:var(--rule);border-radius:3px;margin:16px 0 6px;overflow:hidden}
+.progress span{display:block;height:100%;background:var(--red);width:0;transition:width .3s}
+.stat{color:var(--sub);font-size:.88rem}
+.empty{text-align:center;padding:40px 0;color:var(--sub)}
+
+footer{text-align:center;color:var(--sub);font-size:.8rem;padding:24px 16px 40px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:520px){
+  section.ch{padding:18px 14px}
+  ol.tl::before{left:46px}
+  .tl li{grid-template-columns:42px 1fr;gap:16px}
+  .tl li::after{left:41px}
+  .tl .y{font-size:.95rem}
+}
+</style>
+<body>
+<header class="top">
+  <div class="bar">
+    <span class="brand">地理総合まとめ</span>
+    <button class="iconbtn sheetbtn" id="sheetBtn" aria-pressed="false" title="重要語句を赤シートで隠す">赤シート</button>
+  </div>
+  <nav class="tabs" aria-label="ページ切り替え">
+    <a href="#summary">まとめ</a>
+    <a href="#timeline">年表</a>
+    <a href="#cloze">穴埋め</a>
+    <a href="#qa">一問一答</a>
+  </nav>
+</header>
+
+<main>
+  <!-- ===== まとめ ===== -->
+  <div class="view" id="v-summary">
+    <div class="hero">
+      <h1><span class="yr">EUROPE · RUSSIA · SOUTH ASIA</span>ヨーロッパとロシア、南アジア</h1>
+      <p>地理プリント（南アジアの宗教・印パ戦争、プリント43〜53）の内容を整理した自習用まとめです。上の「赤シート」を押すと、マーカー部分が隠れます。隠れた語句はタップで1つずつ確認できます。</p>
+    </div>
+    <ul class="toc">
+      <li><a href="#ch-south">南アジアの宗教と印パ戦争</a></li>
+      <li><a href="#ch-terrain">ヨーロッパの地形と都市</a></li>
+      <li><a href="#ch-countries">ヨーロッパの国名</a></li>
+      <li><a href="#ch-eu">ヨーロッパの歩みとEU</a></li>
+      <li><a href="#ch-issues">EUの必要性と課題</a></li>
+      <li><a href="#ch-west">イギリス・フランス</a></li>
+      <li><a href="#ch-central">ドイツ・オランダ・スイス</a></li>
+      <li><a href="#ch-south-eu">イタリア・スペイン</a></li>
+      <li><a href="#ch-russia">ロシアの地名と歴史</a></li>
+    </ul>
+
+    <!-- 南アジア -->
+    <section class="ch" id="ch-south">
+      <h2>南アジアの宗教と印パ戦争</h2>
+      <p class="pg">教科書 p.92〜</p>
+      <p class="q">「1つのインド」は、なぜ宗教によって分かれたのだろう？</p>
+
+      <h3>南アジアの宗教分布</h3>
+      <div class="tw"><table>
+        <tr><th>国</th><th>人口</th><th>おもな宗教</th></tr>
+        <tr><td>インド</td><td>13.8億人</td><td><mark>ヒンドゥー教</mark> 80%、イスラーム 14%（ムスリム約2億人＝少数派だが国別で世界3位）</td></tr>
+        <tr><td>パキスタン</td><td>2.2億人</td><td><mark>イスラーム</mark> 96%（ムスリム人口は国別で世界2位）</td></tr>
+        <tr><td>バングラデシュ</td><td>1.6億人</td><td><mark>イスラーム</mark> 90%、ヒンドゥー教 9%</td></tr>
+        <tr><td>スリランカ</td><td>0.2億人</td><td><mark>上座部仏教</mark> 70%、ヒンドゥー教 15%</td></tr>
+        <tr><td>ネパール</td><td></td><td>ヒンドゥー教 81%、チベット仏教 11%</td></tr>
+        <tr><td>ブータン</td><td></td><td><mark>チベット仏教</mark> 70%、ヒンドゥー教 25%</td></tr>
+      </table></div>
+      <p>インド北部の<mark>カシミール</mark>地方は、インドとパキスタンが領有を争っていて、地図帳では色が塗られていない（停戦ラインがある）。</p>
+
+      <h3>印パ戦争の流れ</h3>
+      <ul>
+        <li>ネパール・ブータン以外は「1つのインド」だった。17世紀〜<mark>イギリス</mark>の支配を受ける</li>
+        <li>1947年、イギリスから独立。しかしイギリスの支配方法が原因で、激しい宗教対立が起こる</li>
+        <li><mark>ムスリム</mark>は<mark>ヒンドゥー教徒</mark>からの仕返しを恐れ、ムスリムの多い地域の分離独立を主張。ヒンドゥー教徒は「1つのインド」を主張して内戦状態に</li>
+        <li>結果、ムスリムの多い地域＝<mark>パキスタン</mark>（西パキスタン＋東パキスタン）、ヒンドゥー教徒の多い地域＝<mark>インド</mark>に2分された</li>
+      </ul>
+      <div class="box"><b>カシミール問題</b><br>住民の8割は<mark>ムスリム</mark>だったが、<mark>ヒンドゥー教徒</mark>の藩主が反対を押し切って<mark>インド</mark>への帰属を決定。住民はパキスタンに救助を求め、<mark>インド・パキスタン戦争</mark>が勃発。国連の仲介で停戦ラインが引かれたが、両国とも全域の領有を主張している。2019年8月には停戦ラインを越えて銃撃戦が起き、緊張が高まった。</div>
+      <ul>
+        <li>1971年、東パキスタンが<mark>バングラデシュ</mark>として独立を宣言 → 認めない西パキスタンと戦争。<mark>インド</mark>がバングラデシュ側に立って参戦し、印パ戦争が再燃</li>
+        <li><mark>仏教</mark>徒の多いセイロン島は、イギリス自治領としてインドから分離し、1972年<mark>スリランカ</mark>として独立</li>
+      </ul>
+      <div class="sum"><strong>まとめ</strong><br>「1つのインド」から<mark>パキスタン</mark>が分離、パキスタンから<mark>バングラデシュ</mark>が分離、インドから<mark>スリランカ</mark>が分離した。</div>
+    </section>
+
+    <!-- 地形・都市 -->
+    <section class="ch" id="ch-terrain">
+      <h2>ヨーロッパの地形と都市</h2>
+      <p class="pg">地理プリント43</p>
+
+      <h3>緯度の目安（日本と比べる）</h3>
+      <ul>
+        <li>北緯<mark>60</mark>度：スカンディナヴィア半島の南部・フィンランド湾あたり</li>
+        <li>北緯<mark>45</mark>度：北海道の北端と同じ。フランス南部〜イタリア北部</li>
+        <li>北緯<mark>35</mark>度：東京と同じ。ジブラルタル海峡〜地中海南部</li>
+        <li>→ ヨーロッパは日本よりかなり高緯度にある</li>
+      </ul>
+
+      <h3>おもな地形</h3>
+      <div class="tw"><table>
+        <tr><th>地形名</th><th>ポイント</th></tr>
+        <tr><td><mark>スカンディナヴィア</mark>半島・山脈</td><td>スウェーデンとノルウェーの国境をなす<mark>古期造山帯</mark></td></tr>
+        <tr><td><mark>フィヨルド</mark></td><td><mark>氷河</mark>が削ったU字谷に海水が入りこんだ深い入り江（ノルウェー）</td></tr>
+        <tr><td><mark>リアス海岸</mark></td><td><mark>川</mark>が削ったV字谷に海水が入りこんだギザギザの海岸線（スペイン北西部）</td></tr>
+        <tr><td><mark>グレートブリテン</mark>島</td><td>イギリスの中心となる島</td></tr>
+        <tr><td><mark>北海</mark></td><td>グレートブリテン島と大陸の間</td></tr>
+        <tr><td><mark>ドーヴァー</mark>海峡</td><td>イギリスとヨーロッパ大陸の間</td></tr>
+        <tr><td><mark>ジブラルタル</mark>海峡</td><td>スペインとアフリカ大陸の間</td></tr>
+        <tr><td><mark>イベリア</mark>半島</td><td>スペイン・ポルトガル</td></tr>
+        <tr><td><mark>ピレネー</mark>山脈</td><td>3,000m級の<mark>新期造山帯</mark>。スペインとフランスの国境</td></tr>
+        <tr><td><mark>アルプス</mark>山脈</td><td>4,000m級の新期造山帯。フランス・スイス・イタリア・オーストリアにまたがる</td></tr>
+        <tr><td><mark>地中海</mark></td><td>ヨーロッパとアフリカの間</td></tr>
+        <tr><td><mark>エーゲ</mark>海</td><td>ギリシャとトルコの間</td></tr>
+        <tr><td><mark>バルカン</mark>半島</td><td>ドナウ川以南。ブルガリア・セルビア・ボスニア・ギリシャなど</td></tr>
+        <tr><td><mark>黒海</mark></td><td>ボスポラス海峡でエーゲ海・地中海とつながる</td></tr>
+        <tr><td><mark>ドナウ</mark>川</td><td>流域のオーストリアでは「美しく青きドナウ」が第2の国歌</td></tr>
+        <tr><td><mark>ライン</mark>川</td><td>スイス → フランス・ドイツ国境 → オランダへ流れる国際河川</td></tr>
+        <tr><td><mark>バルト</mark>海</td><td>冬には凍りつく</td></tr>
+      </table></div>
+
+      <h3>おもな都市</h3>
+      <div class="tw"><table>
+        <tr><th>国</th><th>都市</th></tr>
+        <tr><td>イギリス</td><td><mark>ロンドン</mark>（首都・テムズ川・金融）、<mark>リヴァプール</mark>（貿易港）、<mark>マンチェスター</mark>（産業革命期の綿織物工業）</td></tr>
+        <tr><td>オランダ・ベルギー</td><td><mark>アムステルダム</mark>（オランダの首都）、<mark>ブリュッセル</mark>（ベルギーの首都。EU本部＝「EUの首都」）</td></tr>
+        <tr><td>フランス</td><td><mark>パリ</mark>（首都・セーヌ川・芸術とファッション）、<mark>ストラスブール</mark>（ドイツ国境近く。<mark>欧州議会</mark>）、<mark>マルセイユ</mark>（最大の貿易港）</td></tr>
+        <tr><td>モナコ</td><td>フランスとイタリアの国境近くの小さな独立国</td></tr>
+        <tr><td>スペイン・ポルトガル</td><td><mark>マドリード</mark>（スペインの首都）、<mark>バルセロナ</mark>（第2の都市・カタルーニャ）、<mark>リスボン</mark>（ポルトガルの首都）</td></tr>
+        <tr><td>イタリア</td><td><mark>トリノ</mark>（自動車・フィアット社）、<mark>ミラノ</mark>（経済・ファッション）、<mark>ジェノヴァ</mark>（最大の貿易港）、<mark>ヴェネツィア</mark>（水の都）、<mark>フィレンツェ</mark>（ルネサンス発祥）、<mark>ローマ</mark>（首都・バチカン）</td></tr>
+        <tr><td>ギリシャ</td><td><mark>アテネ</mark>（首都・パルテノン神殿）</td></tr>
+        <tr><td>スイス</td><td><mark>ジュネーヴ</mark>（レマン湖・国際機関）、<mark>バーゼル</mark>（ライン川の河港）、<mark>チューリヒ</mark>（金融）</td></tr>
+        <tr><td>ドイツ</td><td><mark>ミュンヘン</mark>（バイエルン州・ビール・自動車）、<mark>フランクフルト</mark>（金融・<mark>欧州中央銀行</mark>）、<mark>ベルリン</mark>（首都）</td></tr>
+        <tr><td>オーストリア</td><td><mark>ウィーン</mark>（首都・音楽の都）</td></tr>
+      </table></div>
+    </section>
+
+    <!-- 国名 -->
+    <section class="ch" id="ch-countries">
+      <h2>ヨーロッパの国名</h2>
+      <p class="pg">地理プリント45　番号はEUに加盟した順のグループ</p>
+      <div class="tw"><table>
+        <tr><th>グループ</th><th>国</th></tr>
+        <tr><td>EC結成6か国</td><td><mark>ベルギー</mark>・<mark>オランダ</mark>・<mark>ルクセンブルク</mark>（ベネルクス）、<mark>フランス</mark>・<mark>ドイツ</mark>・<mark>イタリア</mark></td></tr>
+        <tr><td>1973年加盟</td><td>イギリス・アイルランド・デンマーク</td></tr>
+        <tr><td>1980年代加盟</td><td>ギリシャ・スペイン・ポルトガル</td></tr>
+        <tr><td>1995年加盟</td><td>スウェーデン・フィンランド・オーストリア</td></tr>
+        <tr><td>2004年以降加盟</td><td>エストニア・ラトビア・リトアニア（<mark>バルト3国</mark>）、ポーランド・チェコ・スロバキア・ハンガリー・スロベニア、マルタ・キプロス、ルーマニア・ブルガリア、クロアチア</td></tr>
+        <tr><td>EUに入っていない</td><td><mark>スイス</mark>・<mark>ノルウェー</mark>・<mark>アイスランド</mark>・ウクライナ・ロシア・トルコ</td></tr>
+      </table></div>
+    </section>
+
+    <!-- 歩みとEU -->
+    <section class="ch" id="ch-eu">
+      <h2>ヨーロッパの歩みとEU</h2>
+      <p class="pg">地理プリント45〜48　教科書 p.129〜</p>
+      <p class="q">世界を支配したヨーロッパは、なぜ統合へ向かったのだろう？</p>
+
+      <h3>世界の中心だったヨーロッパ</h3>
+      <ul>
+        <li>15世紀末〜<mark>大航海時代</mark>：世界各地へ進出し、キリスト教や言語などの文化を広める</li>
+        <li>18世紀後半〜<mark>産業革命</mark>：<mark>イギリス</mark>で始まる。<mark>蒸気機関</mark>の改良で<mark>石炭</mark>を燃料にした機械による大量生産が可能に</li>
+        <li>産業革命を達成した国々は、資源を奪い、大量生産した商品を売りつける<mark>市場</mark>として、アジア・アフリカを<mark>植民地</mark>支配</li>
+        <li><mark>帝国主義</mark>がエスカレート → 植民地争奪戦 → <mark>20</mark>世紀に二度の<mark>世界大戦</mark>。どちらも中心舞台はヨーロッパで、大荒廃</li>
+      </ul>
+
+      <h3>第二次世界大戦後：東西冷戦</h3>
+      <ul>
+        <li><mark>アメリカ合衆国</mark>（西・<mark>資本主義</mark>）と<mark>ソ連</mark>（東・<mark>社会主義</mark>）が2大勢力に</li>
+        <li>ヨーロッパに「<mark>鉄のカーテン</mark>」がおろされ、<mark>西ヨーロッパ</mark>と<mark>東ヨーロッパ</mark>に分かれた</li>
+        <li><mark>東西冷戦</mark>時代（1945〜1989／1991）：米ソの直接の戦争はなかったが、<mark>核戦争</mark>の危機</li>
+        <li>1つの民族が2つの国に引き裂かれ、代理戦争に → <mark>朝鮮戦争</mark>・<mark>ベトナム戦争</mark>。<mark>ドイツ</mark>は戦争はなかったが東西に分断</li>
+        <li>1991年<mark>ソ連崩壊</mark>で東西対立は終わったが、<mark>朝鮮半島</mark>の分断は今も続く</li>
+      </ul>
+
+      <h3>ヨーロッパ統合の歩み</h3>
+      <div class="tw"><table>
+        <tr><th>年</th><th>できごと</th></tr>
+        <tr><td>1948</td><td><mark>ベネルクス三国関税同盟</mark>：3国間では<mark>関税をかけない</mark>。小国でも集まれば経済的に自立し、発言力を持てる</td></tr>
+        <tr><td>1952</td><td><mark>ECSC</mark>（ヨーロッパ<mark>石炭鉄鋼</mark>共同体）：ベネルクス＋<mark>フランス</mark>・<mark>西ドイツ</mark>・<mark>イタリア</mark>の6か国</td></tr>
+        <tr><td>1958</td><td><mark>EEC</mark>（ヨーロッパ<mark>経済</mark>共同体）</td></tr>
+        <tr><td>1967</td><td><mark>EC</mark>（ヨーロッパ共同体）となる</td></tr>
+        <tr><td>1960年代</td><td><mark>イギリス</mark>がライバルの<mark>EFTA</mark>をつくり対抗 → うまくいかず</td></tr>
+        <tr><td>1973</td><td><mark>イギリス</mark>・<mark>アイルランド</mark>・<mark>デンマーク</mark>が加盟（9か国）</td></tr>
+        <tr><td>1981・1986</td><td><mark>ギリシャ</mark>、<mark>スペイン</mark>・<mark>ポルトガル</mark>が加盟 → 経済力の弱い南の国が入り、EC内の「<mark>南北問題</mark>」（経済格差）が起こる</td></tr>
+        <tr><td>1985〜</td><td><mark>シェンゲン協定</mark>：域内の<mark>国境での出入国審査を廃止</mark>。EC内でも<mark>イギリス</mark>・<mark>アイルランド</mark>は結ばず、EC外の<mark>スイス</mark>・<mark>ノルウェー</mark>・<mark>アイスランド</mark>は締結</td></tr>
+        <tr><td>1989・1991</td><td>冷戦終結、ソ連解体 → 東ヨーロッパ諸国も民主化へ</td></tr>
+        <tr><td>1992</td><td><mark>マーストリヒト条約</mark>：<mark>政治</mark>統合・<mark>通貨</mark>統合を確認（共通の外交・安全保障、単一通貨）</td></tr>
+        <tr><td>1993</td><td><mark>EU</mark>（ヨーロッパ連合）発足</td></tr>
+        <tr><td>1995</td><td><mark>スウェーデン</mark>・<mark>フィンランド</mark>・<mark>オーストリア</mark>が加盟</td></tr>
+        <tr><td>2002</td><td>共通通貨<mark>ユーロ</mark>の導入（<mark>イギリス</mark>・<mark>デンマーク</mark>・<mark>スウェーデン</mark>は導入せず）</td></tr>
+        <tr><td>2004</td><td>旧東側の8か国（バルト3国・ポーランド・チェコ・スロバキア・ハンガリー・スロベニア）と<mark>マルタ</mark>・<mark>キプロス</mark>が加盟（25か国）</td></tr>
+        <tr><td>2007</td><td><mark>ルーマニア</mark>・<mark>ブルガリア</mark>が加盟</td></tr>
+        <tr><td>2009</td><td><mark>リスボン条約</mark>：ヨーロッパ議会を強化し、EU大統領（常任議長）・EU外相（上級代表）を設置 → ほぼ連邦国家に</td></tr>
+        <tr><td>2013</td><td><mark>クロアチア</mark>が加盟（<mark>28</mark>か国）</td></tr>
+        <tr><td>2016・2020</td><td><mark>イギリス</mark>が住民投票でEU離脱を決定し、2020年に正式離脱（<mark>ブレグジット</mark>）</td></tr>
+      </table></div>
+
+      <div class="box"><b>2026年現在</b><br>EU加盟 <mark>27</mark>か国、ユーロ導入 <mark>21</mark>か国、シェンゲン協定 <mark>29</mark>か国。<br><mark>トルコ</mark>はEU加盟を申請しているが認められていない。<mark>ウクライナ</mark>も加盟を希望しているが、<mark>ロシア</mark>が阻止しようとしている。</div>
+
+      <h3>EU・ユーロ・シェンゲンの関係</h3>
+      <ul>
+        <li>EU加盟・シェンゲン加盟だがユーロ未導入：<mark>デンマーク</mark>・<mark>スウェーデン</mark>・<mark>ポーランド</mark>・<mark>チェコ</mark>・<mark>ハンガリー</mark>・<mark>ルーマニア</mark></li>
+        <li>EU加盟だがシェンゲンに参加しない：<mark>アイルランド</mark>・<mark>キプロス</mark></li>
+        <li>EU未加盟でシェンゲンのみ参加：<mark>スイス</mark>・<mark>ノルウェー</mark>・<mark>アイスランド</mark>・リヒテンシュタイン</li>
+        <li>どれにも入っていない：<mark>イギリス</mark></li>
+      </ul>
+    </section>
+
+    <!-- 必要性と課題 -->
+    <section class="ch" id="ch-issues">
+      <h2>EUの必要性と課題</h2>
+      <p class="pg">地理プリント48・49</p>
+
+      <h3>必要性：争いを避ける</h3>
+      <p>大小さまざまな国が陸続きで隣り合い、国境問題や対立が絶えず、二度の世界大戦に。悲劇を繰り返さないため、「<mark>平和と共存・共栄</mark>」を目的に手を取り合った。</p>
+
+      <h3>メリット：大国と対等に</h3>
+      <div class="tw"><table>
+        <tr><th></th><th>GDP（兆ドル）</th><th>人口（億人）</th><th>面積（万km²）</th></tr>
+        <tr><td>アメリカ</td><td>30.8</td><td>3.47</td><td>983.4</td></tr>
+        <tr><td>中国</td><td>19.4</td><td>14.2</td><td>959.7</td></tr>
+        <tr><td>日本</td><td>4.3</td><td>1.2</td><td>37.8</td></tr>
+        <tr><td>ドイツ</td><td>5.0</td><td>0.80</td><td>35.7</td></tr>
+        <tr><td>EU27か国</td><td><mark>21.2</mark></td><td><mark>4.5</mark></td><td><mark>420</mark></td></tr>
+      </table></div>
+      <ul>
+        <li>1か国ずつでは小さい：日本よりGDPが多いのは<mark>ドイツ</mark>だけ、人口が多い国は<mark>ない</mark>、面積が大きいのは<mark>フランス・スペイン・スウェーデン</mark></li>
+        <li>EU全体では、GDPは日本の約5倍（アメリカに匹敵）、人口は約4倍（アメリカを抜く）、面積は約11倍</li>
+        <li>→ EUとしてまとまった方が<mark>大国として有利に競争できる</mark></li>
+      </ul>
+
+      <h3>GDPと1人当たりGDP</h3>
+      <ul>
+        <li><mark>GDP</mark>＝<mark>国内総生産</mark>：国内で1年間に生産された財とサービスの合計（海外支店の生産や外国で活躍する日本人選手の給与は含まない）</li>
+        <li>名目GDP（2025）上位：<mark>アメリカ</mark>・<mark>中国</mark>・<mark>ドイツ</mark>・<mark>日本</mark>・インド・<mark>イギリス</mark>・<mark>フランス</mark>・<mark>イタリア</mark>・ロシア・ブラジル</li>
+        <li>1人当たりGDP上位：1位<mark>ルクセンブルク</mark>（人口が少なく貧困層が少ない）、2位<mark>アイルランド</mark>（税率が低くIT企業が進出）、3位<mark>スイス</mark>（金融・製薬・精密機械）、5位<mark>アイスランド</mark>（漁業・観光・地熱発電）、6位<mark>ノルウェー</mark>（北海油田）、8位<mark>デンマーク</mark>、9位<mark>オランダ</mark></li>
+        <li>ドイツは国単位では欧州トップだが、人口も最大なので1人当たりでは第2ランク</li>
+        <li>西・北ヨーロッパが高く、南（イタリア・スペイン・ポルトガル・ギリシャ）、東（ルーマニア・ブルガリアなど）ほど低い</li>
+      </ul>
+
+      <h3>EUの課題</h3>
+      <div class="tw"><table>
+        <tr><th></th><th>西ヨーロッパ</th><th>東ヨーロッパ</th></tr>
+        <tr><td>経済水準</td><td><mark>高い</mark></td><td><mark>低い</mark></td></tr>
+        <tr><td>賃金</td><td><mark>高い</mark></td><td><mark>低い</mark></td></tr>
+        <tr><td>移動するもの</td><td>西 → 東へ <mark>工場</mark></td><td>東 → 西へ <mark>労働力</mark></td></tr>
+      </table></div>
+      <ul>
+        <li>西ヨーロッパでは、安い労働力の流入で<mark>自国民の失業率が上昇</mark>。工場の転出で<mark>産業の空洞化</mark>（雇用の減少、関連産業の衰退）</li>
+        <li><mark>トルコ</mark>がEU加盟を申請中だが、話し合いは進まない</li>
+      </ul>
+      <div class="box"><b>外国人労働者と宗教・文化の摩擦</b><br>第二次世界大戦後の経済成長期、労働力不足を外国人労働者が支えた。<br>ドイツ ← <mark>トルコ</mark>（ドイツでは<mark>ガストアルバイター</mark>と呼ばれる）／フランス ← <mark>北アフリカ</mark>（アルジェリア・モロッコなど）／イギリス ← <mark>インド</mark>・カリブ海諸国<br>いまは移民の子や孫の世代になり、ヨーロッパの人々には<mark>多文化との共存</mark>の問題、ヨーロッパ生まれの外国人にはアイデンティティの問題がある。フランスでは公共の場で頭を覆うもの（イスラームの習慣）が禁止された。</div>
+    </section>
+
+    <!-- 英仏 -->
+    <section class="ch" id="ch-west">
+      <h2>イギリス・フランス</h2>
+      <p class="pg">地理プリント50　地図帳 p.53・63</p>
+
+      <h3>イギリス</h3>
+      <ul>
+        <li>正式名称：<mark>グレートブリテン及び北アイルランド連合王国</mark>（United Kingdom＝U.K.）</li>
+        <li><mark>イングランド</mark>王国が13世紀に<mark>ウェールズ</mark>を併合、18世紀に<mark>スコットランド</mark>と合併 → グレートブリテン王国。国旗（ユニオンジャック）は左右対称ではない</li>
+        <li>19世紀にアイルランドを併合 → 1921年アイルランド独立。しかし<mark>北アイルランド</mark>はGB島からの移民が多く、イギリス領に</li>
+      </ul>
+      <div class="box"><b>アイルランド紛争</b>（北アイルランドの帰属をめぐる争い）<br>住民の40%＝<mark>アイルランド系・カトリック</mark>（アイルランドへ返せ）<br>住民の60%＝<mark>イギリス系・プロテスタント</mark>（イギリスのままで）<br>テロの応酬で約3200人が死亡。1998年に和平。</div>
+      <ul>
+        <li><mark>ロンドン</mark>：首都。<mark>テムズ</mark>川の港湾都市。国際金融都市</li>
+        <li><mark>リヴァプール</mark>：<mark>三角貿易</mark>（奴隷貿易）の拠点港。産業革命期には植民地との交易港</li>
+        <li><mark>マンチェスター</mark>：産業革命期に<mark>綿織物</mark>工業が発達</li>
+        <li><mark>ケルト</mark>系民族：アイルランド・スコットランド・ウェールズ・フランスのブルターニュ半島。かつては大陸に広く住んでいたが、英語（ゲルマン語系）に押されて西の端へ。独自の言語（ケルト語系）と文化を持つ</li>
+      </ul>
+
+      <h3>フランス</h3>
+      <ul>
+        <li>フランス＝EU最大の<mark>農業</mark>国。北の国々は<mark>氷河</mark>の侵食で表土が流されやせた土地、南は<mark>地中海性</mark>気候で夏が高温乾燥 → フランスは農業に有利</li>
+        <li>パリ盆地は<mark>小麦</mark>の産地（小麦輸出量は世界3位）</li>
+        <li>ブドウ栽培 → <mark>ワイン</mark>の生産量はイタリア・スペインと世界一を争う。地域ごとの味わい、高級志向で高値で輸出</li>
+        <li><mark>パリ</mark>：首都。<mark>セーヌ</mark>川の水運。中心部は伝統的な低い街並みを守り、副都心ラ・デファンス地区に高層ビルを集めた</li>
+        <li><mark>トゥールーズ</mark>：<mark>エアバス</mark>社（航空機産業）、大学都市</li>
+        <li><mark>マルセイユ</mark>：フランス第2の都市、最大の貿易港</li>
+        <li><mark>カンヌ</mark>：国際映画祭。カンヌ〜ニース〜モナコ＝<mark>コート・ダジュール</mark>（紺碧海岸）、歴史の古いリゾート地</li>
+        <li>ドイツとの国境地帯：<mark>アルザス</mark>・<mark>ロレーヌ</mark>（<mark>鉄鉱石</mark>の産地）、ドイツ側の<mark>ザール</mark>（石炭の産地）。両国で領有をめぐる争いが繰り返された</li>
+      </ul>
+    </section>
+
+    <!-- 独蘭瑞 -->
+    <section class="ch" id="ch-central">
+      <h2>ドイツ・オランダ・スイス</h2>
+      <p class="pg">地理プリント51　地図帳 p.53・55</p>
+
+      <h3>ドイツ</h3>
+      <ul>
+        <li>EU最大の<mark>工業</mark>国。<mark>自動車</mark>・医薬品・精密機械（乗用車輸出量は世界4位）</li>
+        <li><mark>ベルリン</mark>：首都・最大の都市。冷戦の象徴「ベルリンの壁」があった</li>
+        <li><mark>ハンブルク</mark>：ドイツ最大の貿易港、第2の都市（エルベ川）</li>
+        <li><mark>ヴォルフスブルク</mark>：フォルクスワーゲンの企業城下町</li>
+        <li><mark>フランクフルト</mark>：EUの金融の中心。<mark>欧州中央銀行</mark></li>
+        <li><mark>シュツットガルト</mark>：ベンツ・ポルシェ（自動車）</li>
+        <li><mark>ミュンヘン</mark>：南部バイエルン州の中心、第3の都市。シーメンス（機械）・BMW（自動車）・<mark>ビール</mark></li>
+      </ul>
+
+      <h3>オランダ</h3>
+      <ul>
+        <li>ネーデルラント＝「<mark>低い</mark>土地」の意味。国土の約4分の1は海面より低い</li>
+        <li>国土の5分の1以上は<mark>干拓</mark>でつくられた土地＝<mark>ポルダー</mark>。堤防内の水をくみ出すのに<mark>風車</mark>が使われた</li>
+        <li>穀物栽培に向かない土地 → <mark>牧草</mark>栽培 → <mark>乳牛</mark> → <mark>酪農</mark>（チーズ）</li>
+        <li>海岸沿いの砂丘地帯 → <mark>園芸農業</mark>（<mark>花・野菜</mark>）</li>
+        <li><mark>アムステルダム</mark>：首都。標高は海面下、運河の街</li>
+        <li><mark>ロッテルダム</mark>：第2の都市。外港の<mark>ユーロポート</mark>は<mark>ライン</mark>川の河口にあるヨーロッパ最大の貿易港で、<mark>ドイツ</mark>・<mark>スイス</mark>の貿易の窓口にもなる</li>
+        <li><mark>マーストリヒト</mark>：マーストリヒト条約が結ばれた都市</li>
+      </ul>
+
+      <h3>スイス</h3>
+      <ul>
+        <li>大国に囲まれた小国として<mark>永世中立国</mark>を貫くため、国民皆兵。山岳地帯が多く、古くからの産業は他国への「<mark>傭兵</mark>」</li>
+        <li>さまざまな国の通貨が持ちこまれた → <mark>金融</mark>業が盛んに</li>
+        <li>農業は酪農。夏はアルプスの高山の牧草地で放牧、冬はふもとの村で舎飼い＝<mark>移牧</mark></li>
+        <li>多民族・多言語国家：<mark>ドイツ語</mark>（約64%）、<mark>フランス語</mark>（約20%）、<mark>イタリア語</mark>、<mark>ロマンシュ語</mark>。小学校から別の公用語を学ぶ</li>
+        <li><mark>バーゼル</mark>：<mark>ライン</mark>川に面したスイス最大の河港。化学工業</li>
+        <li><mark>チューリヒ</mark>：スイス最大の都市。ニューヨーク・ロンドンと並ぶ国際<mark>金融</mark>都市（銀行・保険）</li>
+        <li><mark>ジュネーヴ</mark>：レマン湖に面する国際都市。ILO・WHO・国際赤十字など国際機関の本部</li>
+      </ul>
+    </section>
+
+    <!-- 伊西 -->
+    <section class="ch" id="ch-south-eu">
+      <h2>イタリア・スペイン</h2>
+      <p class="pg">地理プリント52　地図帳 p.59・61</p>
+
+      <h3>イタリア</h3>
+      <ul>
+        <li>北部＝<mark>工業の三角地帯</mark>：<mark>トリノ</mark>（フィアット社・自動車）、<mark>ミラノ</mark>（第2の都市・経済とファッション）、<mark>ジェノヴァ</mark>（最大の貿易港）</li>
+        <li>豊かな北部と貧しい南部の経済格差＝<mark>南北問題</mark>。北部は自分たちの税金が南部に流れることに不満</li>
+        <li>南部の中心都市ナポリ（「ナポリを見てから<mark>死ね</mark>」）。国家事業「<mark>バノーニ計画</mark>」で<mark>南部</mark>を振興 → <mark>タラント</mark>に巨大な<mark>製鉄所</mark></li>
+        <li><mark>第三のイタリア</mark>：伝統的な職人技術にもとづく地場産業が近年のイタリア経済を支える
+          <ul>
+            <li><mark>ヴェネツィア</mark>：運河の街（水の都）、ガラス細工</li>
+            <li>ボローニャ：<mark>皮革</mark>産業（靴・バッグ）</li>
+            <li>クレモナ：ストラディバリを生んだ<mark>楽器</mark>の都</li>
+            <li><mark>フィレンツェ</mark>：芸術の都、ルネサンス期からの古都</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>スペイン</h3>
+      <ul>
+        <li>標準語は<mark>カスティーリャ語</mark>（スペイン語）。ほかに地方の言語がある（バスク語以外は<mark>ラテン</mark>語系）</li>
+        <li>1939〜1975年は<mark>フランコ</mark>将軍の独裁 → 地方の言語は厳しく弾圧された（取り締まれなかったのはサッカー場のサポーター席だけ）</li>
+      </ul>
+      <div class="tw"><table>
+        <tr><th>地方</th><th>ポイント</th></tr>
+        <tr><td>A <mark>バスク</mark></td><td><mark>ピレネー</mark>山脈の両側（スペイン北部〜フランス南部）。<mark>バスク語</mark>はインド・ヨーロッパ語族にも入らない独自の言語。中心都市<mark>ビルバオ</mark>（鉄鋼業）。分離独立運動が根強い</td></tr>
+        <tr><td>B <mark>カタルーニャ</mark></td><td>独自の文化を持つ先進工業地域。中心都市<mark>バルセロナ</mark>（第2の都市・最大の貿易港、ガウディの建築）。2017年に住民投票で独立を決めたが、政府の弾圧で断念</td></tr>
+        <tr><td>C <mark>ガリシア</mark></td><td><mark>リアス</mark>海岸（「リア」はこの地方の入り江の名）。<mark>サンティアゴ・デ・コンポステーラ</mark>は<mark>カトリック</mark>の巡礼地</td></tr>
+        <tr><td>D <mark>アンダルシア</mark></td><td>フラメンコ・闘牛。約800年<mark>イスラーム</mark>王朝に支配され、ヨーロッパとイスラームの文化が融合。<mark>セビリア</mark>（コロンブスが出港した河港）、<mark>グラナダ</mark>（<mark>アルハンブラ宮殿</mark>）</td></tr>
+      </table></div>
+      <ul>
+        <li><mark>ジブラルタル</mark>：<mark>イギリス</mark>領。海上交通の要所として、スペインは返還を求めている</li>
+        <li>セウタ：ジブラルタルの対岸、アフリカ大陸側（モロッコ側）のスペイン領</li>
+      </ul>
+    </section>
+
+    <!-- ロシア -->
+    <section class="ch" id="ch-russia">
+      <h2>ロシアの地名と歴史</h2>
+      <p class="pg">地理プリント44・53</p>
+
+      <h3>経線・緯線の目安</h3>
+      <ul>
+        <li>東経<mark>20</mark>度：バルト海／東経<mark>60</mark>度：<mark>ウラル</mark>山脈／東経<mark>140</mark>度：東京／東経<mark>180</mark>度</li>
+        <li>北緯<mark>60</mark>度：フィンランド湾／北緯<mark>40</mark>度：秋田</li>
+      </ul>
+
+      <h3>地形</h3>
+      <div class="tw"><table>
+        <tr><th>地形名</th><th>ポイント</th></tr>
+        <tr><td><mark>フィンランド湾</mark></td><td>北緯60度の目安。冬には凍りつく</td></tr>
+        <tr><td><mark>ヴォルガ</mark>川</td><td>ヨーロッパ最長の川。カスピ海に流れこむ</td></tr>
+        <tr><td><mark>黒海</mark></td><td>ボスポラス海峡でエーゲ海・地中海へつながる</td></tr>
+        <tr><td><mark>カフカス</mark>山脈</td><td>5000m級の新期造山帯（英語でコーカサス）。ロシアとジョージア・アルメニア・アゼルバイジャンの国境</td></tr>
+        <tr><td><mark>カスピ海</mark></td><td>湖面標高 -26mの塩湖。世界最大の湖</td></tr>
+        <tr><td><mark>アラル海</mark></td><td>50年前までは世界4位の面積の湖だったが、大きく縮小</td></tr>
+        <tr><td><mark>ウラル</mark>山脈</td><td>標高600mほどのなだらかな<mark>古期造山帯</mark>。ここより東が<mark>シベリア</mark>（アジア）</td></tr>
+        <tr><td><mark>バイカル湖</mark></td><td>世界一深く、透明度も世界一の湖。冬はこの周辺に高気圧が居座る</td></tr>
+        <tr><td><mark>アムール</mark>川</td><td>中国との国境</td></tr>
+        <tr><td><mark>サハリン</mark></td><td>日本名は<mark>樺太</mark></td></tr>
+        <tr><td><mark>オホーツク海</mark></td><td>冬は北海道まで流氷に覆われる。世界で最も低い緯度まで海が凍る</td></tr>
+        <tr><td><mark>カムチャツカ</mark>半島</td><td>環太平洋造山帯の一部。5000m弱の活火山が多い</td></tr>
+        <tr><td><mark>千島</mark>列島</td><td>環太平洋造山帯の弧状列島。日本とロシアの間の領土問題</td></tr>
+      </table></div>
+
+      <h3>都市</h3>
+      <ul>
+        <li><mark>サンクトペテルブルク</mark>：バルト海（フィンランド湾）に面した港湾都市。ロシア帝国の都。王宮はエルミタージュ美術館に。「ピョートル大帝の街」の意味</li>
+        <li><mark>モスクワ</mark>：ロシアの首都。クレムリン宮殿、ボリショイ劇場</li>
+        <li><mark>キーウ</mark>：ウクライナの首都（ロシア語読みはキエフ）</li>
+        <li><mark>イルクーツク</mark>：バイカル湖近くの工業都市。シベリアの中心</li>
+        <li><mark>オイミャコン</mark>：北半球の寒極</li>
+        <li><mark>ハバロフスク</mark>：アムール川に面した極東ロシア最大の都市。中国国境</li>
+        <li><mark>ウラジオストク</mark>：日本海に面する港湾都市。<mark>シベリア鉄道</mark>の東の起点（モスクワまで鉄道で7日）</li>
+      </ul>
+
+      <h3>ロシアの歴史：<mark>不凍港</mark>を求め続けた</h3>
+      <ul>
+        <li>15世紀のモスクワ周辺から、16〜19世紀にかけてシベリア・極東へ領土を拡大。江戸時代末には日本のすぐ近くに</li>
+        <li>北の<mark>バルト</mark>海、東のウラジオストクは冬に凍る → <mark>南下政策</mark>：<mark>遼東</mark>半島（清）・<mark>朝鮮</mark>半島へ進出を狙う → 1904年<mark>日露戦争</mark></li>
+        <li>続いて<mark>バルカン</mark>半島を狙い、1914年<mark>第一次世界大戦</mark>が勃発</li>
+        <li>大戦中、長引く戦争と皇帝支配に耐えかね、皇帝支配を倒す<mark>ロシア革命</mark>（1917年）</li>
+      </ul>
+      <div class="box"><b>ソ連（1922〜1991）</b><br>1922年 <mark>ソビエト社会主義共和国連邦</mark>（ソ連）誕生。世界初の<mark>社会主義</mark>国家（面積は日本の約60倍）。<br>初代指導者<mark>レーニン</mark>は平等な社会を理想とし、<mark>産業の国有化</mark>・農地の共有化を進め、政府が生産から分配まで統制する<mark>計画経済</mark>を推進。<br>第二次世界大戦後は、アメリカに対抗するため<mark>軍事</mark>・<mark>宇宙開発</mark>を国民経済より優先。支配者層による格差、競争がなく生産性も上がらない → 社会も経済も停滞。<br>1991年、<mark>バルト3国</mark>の独立をきっかけに<mark>ソ連崩壊</mark> → <mark>15</mark>の国に分裂。残ったのが現在の<mark>ロシア連邦</mark>（面積は日本の約45倍）。</div>
+    </section>
+  </div>
+
+  <!-- ===== 年表 ===== -->
+  <div class="view" id="v-timeline">
+    <div class="hero"><h1><span class="yr">TIMELINE</span>年表で流れをつかむ</h1>
+      <p>地域ボタンで絞り込めます。赤枠は特に重要なできごとです。</p></div>
+    <div class="filters" id="tlFilters"></div>
+    <ol class="tl" id="tl"></ol>
+  </div>
+
+  <!-- ===== 穴埋め ===== -->
+  <div class="view" id="v-cloze">
+    <div class="hero"><h1><span class="yr">FILL IN THE BLANKS</span>穴埋め問題</h1>
+      <p>赤い下線をタップすると答えが出ます。もう一度タップで隠れます。</p></div>
+    <div class="tools">
+      <select id="clozeCh" aria-label="単元を選ぶ"></select>
+      <button class="btn" id="clozeShow">全部見る</button>
+      <button class="btn" id="clozeHide">全部隠す</button>
+      <button class="btn" id="clozeShuffle">シャッフル</button>
+    </div>
+    <ol class="cloze" id="clozeList"></ol>
+  </div>
+
+  <!-- ===== 一問一答 ===== -->
+  <div class="view" id="v-qa">
+    <div class="hero"><h1><span class="yr">Q &amp; A</span>一問一答</h1>
+      <p>答えを確認したら「覚えた」か「もう一回」を選びます。「覚えた」の記録はこのブラウザに保存されます。</p></div>
+    <div class="tools">
+      <select id="qaCh" aria-label="単元を選ぶ"></select>
+      <select id="qaMode" aria-label="出題範囲">
+        <option value="todo">まだ覚えていない問題だけ</option>
+        <option value="all">すべての問題</option>
+      </select>
+      <button class="btn" id="qaReset">記録をリセット</button>
+    </div>
+    <div id="qaBox"></div>
+    <div class="progress"><span id="qaBar"></span></div>
+    <div class="stat" id="qaStat"></div>
+  </div>
+</main>
+<footer>地理 授業プリント（南アジア・ヨーロッパ・ロシア）をもとに作成した自習用まとめ</footer>
+
+<script>
+const CH = {
+  south:"南アジア",
+  terrain:"ヨーロッパの地形と都市",
+  eu:"ヨーロッパの歩みとEU",
+  countries:"ヨーロッパ各国",
+  russia:"ロシア"
+};
+
+/* ---------- 年表データ ---------- */
+const REG = {
+  "ヨーロッパ":"#2B6CB0","EU統合":"#2F855A","ロシア":"#C05621","南アジア":"#805AD5","世界":"#D2283C"
+};
+const TL = [
+  [1492,"ヨーロッパ","大航海時代（15世紀末〜）","世界各地へ進出し、キリスト教や言語を広める"],
+  [1760,"ヨーロッパ","産業革命（18世紀後半〜）","イギリスで始まる。蒸気機関・石炭・機械による大量生産",1],
+  [1904,"ロシア","日露戦争","南下政策で遼東半島・朝鮮半島を狙う"],
+  [1914,"世界","第一次世界大戦","ロシアはバルカン半島を狙う",1],
+  [1917,"ロシア","ロシア革命","皇帝支配を倒す"],
+  [1921,"ヨーロッパ","アイルランド独立","北アイルランドはイギリス領に残る"],
+  [1922,"ロシア","ソ連の誕生","世界初の社会主義国家。産業の国有化・計画経済",1],
+  [1939,"ヨーロッパ","スペインでフランコ独裁（〜1975）","バスク語・カタルーニャ語を弾圧"],
+  [1945,"世界","第二次世界大戦の終結・東西冷戦の始まり","鉄のカーテン。米（資本主義）vs ソ連（社会主義）",1],
+  [1947,"南アジア","インド・パキスタンの分離独立","イギリスから独立し宗教で2分。カシミールをめぐり印パ戦争",1],
+  [1948,"EU統合","ベネルクス三国関税同盟","ベルギー・オランダ・ルクセンブルク。3国間で関税をかけない"],
+  [1952,"EU統合","ECSC（ヨーロッパ石炭鉄鋼共同体）","ベネルクス＋フランス・西ドイツ・イタリアの6か国"],
+  [1958,"EU統合","EEC（ヨーロッパ経済共同体）",""],
+  [1967,"EU統合","EC（ヨーロッパ共同体）","",1],
+  [1971,"南アジア","バングラデシュの独立","東パキスタンが独立。インドがバングラデシュ側で参戦"],
+  [1972,"南アジア","スリランカの成立","仏教徒の多いセイロン島"],
+  [1973,"EU統合","イギリス・アイルランド・デンマークが加盟","9か国に"],
+  [1981,"EU統合","ギリシャが加盟","1986年にスペイン・ポルトガル。南北問題が表面化"],
+  [1985,"EU統合","シェンゲン協定","国境での出入国審査を廃止"],
+  [1989,"世界","冷戦の終結",""],
+  [1991,"ロシア","ソ連崩壊","バルト3国の独立がきっかけ。15の国に分裂し、ロシア連邦へ",1],
+  [1992,"EU統合","マーストリヒト条約","政治統合・通貨統合を確認"],
+  [1993,"EU統合","EU（ヨーロッパ連合）発足","",1],
+  [1995,"EU統合","スウェーデン・フィンランド・オーストリアが加盟",""],
+  [1998,"ヨーロッパ","北アイルランド和平","アイルランド紛争（カトリック vs プロテスタント）"],
+  [2002,"EU統合","共通通貨ユーロの導入","イギリス・デンマーク・スウェーデンは導入せず",1],
+  [2004,"EU統合","旧東側8か国＋マルタ・キプロスが加盟","25か国に"],
+  [2007,"EU統合","ルーマニア・ブルガリアが加盟",""],
+  [2009,"EU統合","リスボン条約","EU大統領・EU外相を設置。ほぼ連邦国家に"],
+  [2013,"EU統合","クロアチアが加盟","28か国に"],
+  [2016,"EU統合","イギリスがEU離脱を決定","住民投票。2020年に正式離脱（ブレグジット）",1],
+  [2017,"ヨーロッパ","カタルーニャの住民投票","独立を決めたがスペイン政府の弾圧で断念"],
+  [2019,"南アジア","カシミールで印パが銃撃戦","停戦ラインを越えて緊張が高まる"],
+  [2026,"EU統合","現在のEU","EU27か国・ユーロ21か国・シェンゲン29か国"]
+];
+
+/* ---------- 穴埋めデータ ---------- */
+const CLOZE = [
+  ["south","インドでは[ヒンドゥー教]徒が約8割、パキスタンとバングラデシュでは[イスラーム]を信仰する人が9割以上を占める。"],
+  ["south","スリランカでは[上座部仏教]、ブータンでは[チベット仏教]を信仰する人が多い。"],
+  ["south","1947年、南アジアは[イギリス]から独立したが、宗教対立から[パキスタン]と[インド]に分かれた。"],
+  ["south","[カシミール]地方では、住民の8割が[ムスリム]なのに、藩主がインドへの帰属を決めたため印パ戦争が起こった。"],
+  ["south","1971年、東パキスタンが[バングラデシュ]として独立した。"],
+  ["south","仏教徒の多いセイロン島は、1972年に[スリランカ]として独立した。"],
+  ["terrain","[氷河]が削ったU字谷に海水が入りこんだ入り江を[フィヨルド]という。"],
+  ["terrain","川が削ったV字谷に海水が入りこんだギザギザの海岸を[リアス海岸]という。"],
+  ["terrain","スペインとフランスの国境には[ピレネー]山脈、スイスなどにまたがる4,000m級の[アルプス]山脈がある。どちらも[新期]造山帯。"],
+  ["terrain","イギリスと大陸の間は[ドーヴァー]海峡、スペインとアフリカの間は[ジブラルタル]海峡。"],
+  ["terrain","スイスからフランス・ドイツ国境を通りオランダへ流れるのは[ライン]川。"],
+  ["terrain","北海道の北端は北緯[45]度、東京は北緯[35]度で、ヨーロッパは日本より高緯度にある。"],
+  ["terrain","EU本部があり「EUの首都」と呼ばれるのはベルギーの[ブリュッセル]。"],
+  ["terrain","欧州議会があるのはフランスの[ストラスブール]、欧州中央銀行があるのはドイツの[フランクフルト]。"],
+  ["eu","18世紀後半、[イギリス]で[産業革命]が始まった。"],
+  ["eu","第二次世界大戦後、ヨーロッパには「[鉄のカーテン]」がおろされ、東西に分断された。"],
+  ["eu","1948年、ベルギー・オランダ・ルクセンブルクは[ベネルクス三国関税同盟]を結成した。"],
+  ["eu","1952年に[ECSC]（ヨーロッパ石炭鉄鋼共同体）、1958年に[EEC]（ヨーロッパ経済共同体）がつくられた。"],
+  ["eu","1967年に[EC]（ヨーロッパ共同体）となり、1973年に[イギリス]・アイルランド・デンマークが加盟した。"],
+  ["eu","[シェンゲン協定]によって、加盟国間の国境での出入国審査が廃止された。"],
+  ["eu","1992年の[マーストリヒト条約]で政治統合・通貨統合が確認され、1993年に[EU]が発足した。"],
+  ["eu","2002年、共通通貨[ユーロ]が導入された。"],
+  ["eu","2009年の[リスボン条約]で、EU大統領やEU外相が置かれた。"],
+  ["eu","2016年、[イギリス]は住民投票でEU離脱を決め、2020年に正式に離脱した。"],
+  ["eu","2026年現在、EU加盟は[27]か国、ユーロ導入は[21]か国、シェンゲン協定は[29]か国。"],
+  ["eu","EU加盟を申請しているが認められていないのは[トルコ]。"],
+  ["eu","GDPは[国内総生産]のことで、国内で1年間に生産された財とサービスの合計。"],
+  ["eu","西ヨーロッパの工場が賃金の安い東へ移ると、西では[産業の空洞化]が起こる。"],
+  ["eu","ドイツではトルコなどからの外国人労働者を[ガストアルバイター]と呼んだ。"],
+  ["countries","イギリスの正式名称は「[グレートブリテン及び北アイルランド連合王国]」。"],
+  ["countries","北アイルランドでは、アイルランド系の[カトリック]とイギリス系の[プロテスタント]が対立した。"],
+  ["countries","産業革命期、[マンチェスター]では[綿織物]工業が発達した。"],
+  ["countries","フランスはEU最大の[農業]国で、パリ盆地は[小麦]の産地。"],
+  ["countries","フランスの[トゥールーズ]には航空機メーカーの[エアバス]社がある。"],
+  ["countries","ドイツはEU最大の[工業]国で、特に[自動車]工業が盛ん。"],
+  ["countries","オランダでは[干拓]でつくった土地を[ポルダー]といい、排水に[風車]が使われた。"],
+  ["countries","ライン川河口の[ユーロポート]はヨーロッパ最大の貿易港。"],
+  ["countries","スイスは[永世中立国]で、[金融]業が盛ん。"],
+  ["countries","夏は高地の牧草地、冬はふもとの村で家畜を飼う方法を[移牧]という。"],
+  ["countries","イタリア北部のトリノ・ミラノ・ジェノヴァを結ぶ地域を[工業の三角地帯]という。"],
+  ["countries","イタリアでは南部を振興するため[バノーニ計画]が行われ、[タラント]に製鉄所が建設された。"],
+  ["countries","伝統的な職人技術による地場産業が盛んなイタリア中北部を[第三のイタリア]という。"],
+  ["countries","スペインの[バスク]語はインド・ヨーロッパ語族に属さない独自の言語。"],
+  ["countries","スペインの[カタルーニャ]地方の中心都市は[バルセロナ]。"],
+  ["countries","グラナダには、イスラーム王朝の宮殿[アルハンブラ宮殿]がある。"],
+  ["countries","[ジブラルタル]は[イギリス]領で、スペインは返還を求めている。"],
+  ["russia","ヨーロッパ最長の川で、カスピ海に流れこむのは[ヴォルガ]川。"],
+  ["russia","[ウラル]山脈は古期造山帯で、ここより東が[シベリア]。"],
+  ["russia","世界一深い湖は[バイカル湖]、世界最大の湖は[カスピ海]。"],
+  ["russia","ロシアと中国の国境となっている川は[アムール]川。"],
+  ["russia","[ウラジオストク]はシベリア鉄道の東の起点。"],
+  ["russia","北半球の寒極といわれるのは[オイミャコン]。"],
+  ["russia","ロシアは冬でも凍らない[不凍港]を求めて[南下政策]をとった。"],
+  ["russia","1917年の[ロシア革命]を経て、1922年に[ソ連]が誕生した。"],
+  ["russia","ソ連では[産業の国有化]を進め、政府が経済全体を統制する[計画経済]を行った。"],
+  ["russia","1991年に[ソ連崩壊]が起こり、[15]の国に分裂した。"]
+];
+
+/* ---------- 一問一答データ ---------- */
+const QA = [
+  ["south","インドで最も多く信仰されている宗教は？","ヒンドゥー教","約80%"],
+  ["south","ムスリム人口が国別で世界2位の国は？","パキスタン"],
+  ["south","スリランカで多く信仰されている仏教は？","上座部仏教"],
+  ["south","南アジアが1947年に独立した相手の国は？","イギリス"],
+  ["south","インドとパキスタンが領有を争う地方は？","カシミール地方"],
+  ["south","カシミール地方の住民の8割を占めるのは？","ムスリム"],
+  ["south","1971年に東パキスタンが独立してできた国は？","バングラデシュ"],
+  ["south","バングラデシュ独立の際、バングラデシュ側に立って参戦した国は？","インド"],
+  ["south","1972年にセイロン島が独立してできた国は？","スリランカ"],
+  ["terrain","氷河が削ったU字谷に海水が入った入り江は？","フィヨルド"],
+  ["terrain","川が削ったV字谷に海水が入ったギザギザの海岸は？","リアス海岸"],
+  ["terrain","スウェーデンとノルウェーの国境をなす古期造山帯の山脈は？","スカンディナヴィア山脈"],
+  ["terrain","スペインとフランスの国境の山脈は？","ピレネー山脈"],
+  ["terrain","フランス・スイス・イタリア・オーストリアにまたがる山脈は？","アルプス山脈"],
+  ["terrain","イギリスとヨーロッパ大陸の間の海峡は？","ドーヴァー海峡"],
+  ["terrain","スペインとアフリカ大陸の間の海峡は？","ジブラルタル海峡"],
+  ["terrain","ギリシャとトルコの間の海は？","エーゲ海"],
+  ["terrain","「美しく青き〜」と歌われる、オーストリアを流れる川は？","ドナウ川"],
+  ["terrain","冬に凍りつく、北ヨーロッパの海は？","バルト海"],
+  ["terrain","北海道の北端とほぼ同じ緯度は北緯何度？","北緯45度"],
+  ["terrain","EU本部がある都市は？","ブリュッセル","ベルギーの首都"],
+  ["terrain","レマン湖のほとりにあり、国際機関が多い都市は？","ジュネーヴ"],
+  ["terrain","ルネサンス発祥の地とされるイタリアの都市は？","フィレンツェ"],
+  ["terrain","オーストリアの首都で「音楽の都」は？","ウィーン"],
+  ["eu","15世紀末から始まった、ヨーロッパの世界進出の時代は？","大航海時代"],
+  ["eu","18世紀後半にイギリスで始まった技術・社会の変化は？","産業革命"],
+  ["eu","軍事力で他民族を支配し、植民地を広げようとする考えは？","帝国主義"],
+  ["eu","戦後ヨーロッパを東西に分けた境界を何と呼んだ？","鉄のカーテン"],
+  ["eu","米ソの代理戦争として同じ民族同士が戦った戦争を2つ挙げると？","朝鮮戦争・ベトナム戦争"],
+  ["eu","1948年にベネルクス3国が結成したものは？","ベネルクス三国関税同盟"],
+  ["eu","ECSCの日本語名は？","ヨーロッパ石炭鉄鋼共同体"],
+  ["eu","1967年に発足したヨーロッパの共同体は？","EC（ヨーロッパ共同体）"],
+  ["eu","ECに対抗してイギリスがつくったグループは？","EFTA"],
+  ["eu","経済力の弱い南の国が加盟して起きたEC内の格差問題は？","南北問題"],
+  ["eu","加盟国間の国境での出入国審査を廃止した協定は？","シェンゲン協定"],
+  ["eu","1992年、政治統合・通貨統合を確認した条約は？","マーストリヒト条約"],
+  ["eu","EUが発足したのは何年？","1993年"],
+  ["eu","EUの共通通貨は？","ユーロ","2002年に導入"],
+  ["eu","EU大統領・EU外相を設置した2009年の条約は？","リスボン条約"],
+  ["eu","2020年に正式にEUを離脱した国は？","イギリス","ブレグジット"],
+  ["eu","2026年現在のEU加盟国数は？","27か国"],
+  ["eu","EUに加盟せずシェンゲン協定のみ参加する国を3つ挙げると？","スイス・ノルウェー・アイスランド","ほかにリヒテンシュタイン"],
+  ["eu","EU加盟国だがシェンゲン協定に参加しない国は？","アイルランド・キプロス"],
+  ["eu","EUの成り立ちの目的は？","平和と共存・共栄（争いを避ける）"],
+  ["eu","1人当たりGDPが世界1位のヨーロッパの国は？","ルクセンブルク"],
+  ["eu","北海油田の石油・天然ガスで1人当たりGDPが高い国は？","ノルウェー"],
+  ["eu","工場が国外へ移り雇用が減ることを何という？","産業の空洞化"],
+  ["eu","ドイツに多く来た外国人労働者の出身国は？","トルコ","ガストアルバイター"],
+  ["eu","フランスに多く来た外国人労働者の出身地域は？","北アフリカ","アルジェリア・モロッコなど"],
+  ["countries","イギリスを構成する4つの地域は？","イングランド・ウェールズ・スコットランド・北アイルランド"],
+  ["countries","北アイルランドの帰属をめぐる紛争は？","アイルランド紛争","1998年に和平"],
+  ["countries","三角貿易（奴隷貿易）の拠点だったイギリスの港は？","リヴァプール"],
+  ["countries","アイルランドやスコットランドなどに住む、独自の言語を持つ民族は？","ケルト系民族"],
+  ["countries","フランス南部の夏が高温乾燥になる気候は？","地中海性気候"],
+  ["countries","フランスが世界一をイタリア・スペインと争う生産物は？","ワイン"],
+  ["countries","カンヌ〜ニース〜モナコの海岸を何という？","コート・ダジュール（紺碧海岸）"],
+  ["countries","フランスとドイツが領有を争った、鉄鉱石の産地は？","アルザス・ロレーヌ"],
+  ["countries","フォルクスワーゲンの企業城下町は？","ヴォルフスブルク"],
+  ["countries","ベンツやポルシェの本社がある都市は？","シュツットガルト"],
+  ["countries","BMWやビールで知られる南ドイツの都市は？","ミュンヘン"],
+  ["countries","「ネーデルラント」の意味は？","低い土地"],
+  ["countries","オランダで干拓によってつくられた土地は？","ポルダー"],
+  ["countries","オランダの海岸沿いの砂丘地帯で行われる農業は？","園芸農業（花・野菜）"],
+  ["countries","ライン川河口にあるヨーロッパ最大の貿易港は？","ユーロポート"],
+  ["countries","スイスで使われる4つの言語は？","ドイツ語・フランス語・イタリア語・ロマンシュ語"],
+  ["countries","スイス最大の都市で、国際金融都市は？","チューリヒ"],
+  ["countries","イタリアで、伝統的な職人技術による地場産業が盛んな地域は？","第三のイタリア"],
+  ["countries","バイオリンの名器ストラディバリを生んだ「楽器の都」は？","クレモナ"],
+  ["countries","スペインの標準語は何語と呼ばれる？","カスティーリャ語"],
+  ["countries","スペインのバスク地方の中心都市は？","ビルバオ","鉄鋼業"],
+  ["countries","聖ヤコブの遺骸が見つかったカトリックの巡礼地は？","サンティアゴ・デ・コンポステーラ"],
+  ["countries","フラメンコや闘牛の文化がある、スペイン南部の地方は？","アンダルシア"],
+  ["countries","コロンブスが出港した、スペインの河港都市は？","セビリア"],
+  ["countries","1939〜1975年にスペインを独裁支配した人物は？","フランコ将軍"],
+  ["russia","ヨーロッパ最長の川は？","ヴォルガ川"],
+  ["russia","ロシアとジョージアなどの国境をなす5000m級の山脈は？","カフカス山脈","英語でコーカサス"],
+  ["russia","湖面標高が-26mの世界最大の湖は？","カスピ海"],
+  ["russia","50年前までは世界4位の面積だった湖は？","アラル海"],
+  ["russia","ヨーロッパとシベリアの境の古期造山帯は？","ウラル山脈"],
+  ["russia","世界一深く透明度も高い湖は？","バイカル湖"],
+  ["russia","日本名を樺太という島は？","サハリン"],
+  ["russia","世界で最も低緯度まで凍る海は？","オホーツク海"],
+  ["russia","日本とロシアの領土問題がある弧状列島は？","千島列島"],
+  ["russia","ロシア帝国の都で、エルミタージュ美術館がある都市は？","サンクトペテルブルク"],
+  ["russia","ウクライナの首都は？","キーウ","ロシア語読みはキエフ"],
+  ["russia","アムール川に面した極東ロシア最大の都市は？","ハバロフスク"],
+  ["russia","冬でも凍らない港を何という？","不凍港"],
+  ["russia","1904年、ロシアの南下政策で起きた戦争は？","日露戦争"],
+  ["russia","ソ連の初代指導者は？","レーニン"],
+  ["russia","政府が生産から分配まで経済を統制するしくみは？","計画経済"],
+  ["russia","ソ連崩壊のきっかけとなった1991年の独立は？","バルト3国の独立"],
+  ["russia","ソ連崩壊でいくつの国に分かれた？","15か国"]
+];
+
+/* ---------- ユーティリティ ---------- */
+const $ = s => document.querySelector(s);
+const store = {
+  get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+const shuffle = a => {a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc = s => s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+function chOptions(sel){
+  sel.innerHTML = `<option value="all">すべての単元</option>` +
+    Object.entries(CH).map(([k,v])=>`<option value="${k}">${v}</option>`).join("");
+}
+
+/* ---------- ルーティング ---------- */
+const VIEWS = ["summary","timeline","cloze","qa"];
+function route(){
+  const h = location.hash.slice(1);
+  let v = VIEWS.includes(h) ? h : (h.startsWith("ch-") ? "summary" : "summary");
+  document.querySelectorAll(".view").forEach(el=>el.classList.toggle("on", el.id==="v-"+v));
+  document.querySelectorAll("nav.tabs a").forEach(a=>{
+    if(a.getAttribute("href")==="#"+v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+  });
+  if(h.startsWith("ch-")){const t=document.getElementById(h); if(t) t.scrollIntoView();}
+  else window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+
+/* ---------- 赤シート ---------- */
+const sheetBtn = $("#sheetBtn");
+function setSheet(on){
+  document.body.classList.toggle("sheet",on);
+  sheetBtn.setAttribute("aria-pressed",on);
+  document.querySelectorAll("mark.open").forEach(m=>m.classList.remove("open"));
+  store.set("chiri-sheet",on);
+}
+sheetBtn.addEventListener("click",()=>setSheet(!document.body.classList.contains("sheet")));
+document.addEventListener("click",e=>{
+  const m = e.target.closest("mark");
+  if(m && document.body.classList.contains("sheet")) m.classList.toggle("open");
+});
+
+/* ---------- 年表 ---------- */
+let tlReg = "all";
+function renderTL(){
+  const f = $("#tlFilters");
+  f.innerHTML = [["all","すべて"],...Object.keys(REG).map(r=>[r,r])]
+    .map(([k,l])=>`<button class="chip" data-r="${k}" aria-pressed="${k===tlReg}">${l}</button>`).join("");
+  $("#tl").innerHTML = TL.filter(e=>tlReg==="all"||e[1]===tlReg).map(([y,r,t,d,big])=>
+    `<li class="${big?"big":""}" style="--c:${REG[r]}"><span class="y">${y}</span>
+     <div class="ev"><span class="tag">${r}</span><b>${t}</b>${d?`<small>${d}</small>`:""}</div></li>`).join("");
+}
+$("#tlFilters").addEventListener("click",e=>{const b=e.target.closest(".chip"); if(b){tlReg=b.dataset.r; renderTL();}});
+
+/* ---------- 穴埋め ---------- */
+let clozeOrder = CLOZE.map((_,i)=>i);
+function renderCloze(){
+  const ch = $("#clozeCh").value;
+  $("#clozeList").innerHTML = clozeOrder.map(i=>CLOZE[i]).filter(c=>ch==="all"||c[0]===ch).map(([c,s])=>{
+    const html = esc(s).replace(/\[([^\]]+)\]/g,(_,a)=>`<button class="blank" aria-label="答えを見る">${a}</button>`);
+    return `<li><span class="chlabel">${CH[c]}</span>${html}</li>`;
+  }).join("");
+}
+$("#clozeList").addEventListener("click",e=>{
+  const b=e.target.closest(".blank"); if(!b) return;
+  b.classList.toggle("open"); b.setAttribute("aria-label", b.classList.contains("open")?"答えを隠す":"答えを見る");
+});
+$("#clozeCh").addEventListener("change",renderCloze);
+$("#clozeShow").addEventListener("click",()=>document.querySelectorAll(".blank").forEach(b=>b.classList.add("open")));
+$("#clozeHide").addEventListener("click",()=>document.querySelectorAll(".blank").forEach(b=>b.classList.remove("open")));
+$("#clozeShuffle").addEventListener("click",()=>{clozeOrder=shuffle(clozeOrder); renderCloze();});
+
+/* ---------- 一問一答 ---------- */
+let known = new Set(store.get("chiri-known",[]));
+let deck = [], pos = 0, revealed = false;
+function pool(){
+  const ch=$("#qaCh").value, mode=$("#qaMode").value;
+  return QA.map((q,i)=>i).filter(i=>(ch==="all"||QA[i][0]===ch)&&(mode==="all"||!known.has(i)));
+}
+function newDeck(){deck=shuffle(pool()); pos=0; revealed=false; renderQA();}
+function renderQA(){
+  const ch=$("#qaCh").value;
+  const total = QA.filter(q=>ch==="all"||q[0]===ch).length;
+  const done = QA.filter((q,i)=>(ch==="all"||q[0]===ch)&&known.has(i)).length;
+  $("#qaBar").style.width = total? (done/total*100)+"%" : "0";
+  $("#qaStat").textContent = `覚えた問題 ${done} / ${total}`;
+  const box=$("#qaBox");
+  if(pos>=deck.length){
+    box.innerHTML = `<div class="card"><div class="empty">${deck.length? "このセットは終わりです。":"この範囲はすべて覚えました。"}<br><br>
+      <button class="btn main" id="qaAgain">${deck.length?"もう一周する":"すべての問題で復習する"}</button></div></div>`;
+    $("#qaAgain").onclick=()=>{ if(!deck.length) $("#qaMode").value="all"; newDeck(); };
+    return;
+  }
+  const i=deck[pos], [c,q,a,note]=QA[i];
+  box.innerHTML = `<div class="card">
+    <div class="meta"><span>${CH[c]}</span><span>${pos+1} / ${deck.length}</span></div>
+    <div class="qq">${esc(q)}</div>
+    <div class="ans" aria-live="polite">${revealed? esc(a)+(note?`<small>${esc(note)}</small>`:""):""}</div>
+    <div class="row">${revealed
+      ? `<button class="btn" id="qaNo">もう一回</button><button class="btn main" id="qaYes">覚えた</button>`
+      : `<button class="btn main" id="qaShow">答えを見る</button>`}</div></div>`;
+  if(revealed){
+    $("#qaYes").onclick=()=>{known.add(i); store.set("chiri-known",[...known]); pos++; revealed=false; renderQA();};
+    $("#qaNo").onclick=()=>{deck.push(i); pos++; revealed=false; renderQA();};
+  } else $("#qaShow").onclick=()=>{revealed=true; renderQA();};
+}
+$("#qaCh").addEventListener("change",newDeck);
+$("#qaMode").addEventListener("change",newDeck);
+$("#qaReset").addEventListener("click",()=>{ if(confirm("「覚えた」の記録をすべて消しますか？")){known=new Set(); store.set("chiri-known",[]); newDeck();} });
+
+/* ---------- 初期化 ---------- */
+chOptions($("#clozeCh")); chOptions($("#qaCh"));
+renderTL(); renderCloze(); newDeck();
+if(store.get("chiri-sheet",false)) setSheet(true);
+route();
+</script>
+</body>
+</html>
